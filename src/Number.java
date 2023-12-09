@@ -1,10 +1,17 @@
-public class Number extends ArithmeticOperation{
-    public  int value;
-    public Number(int value){
-        this.value = value;
+public class Number extends ArithmeticExpression {
+    public Number(int value) {
+        super(value);
     }
+
+
     @Override
-    int evaluate() {
-        return this.value;
+    public String toString() {
+        return "" + getValue();
     }
+
+    @Override
+    public int evaluate() {
+        return getValue();
+    }
+
 }
