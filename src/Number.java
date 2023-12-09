@@ -4,7 +4,7 @@ public class Number extends ArithmeticOperation{
         this.value = value;
     }
     @Override
-    void evaluate() {
-        System.out.println(this.value);
+    int evaluate() {
+        return this.value;
     }
 }

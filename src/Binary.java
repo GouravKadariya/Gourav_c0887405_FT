@@ -1,21 +1,33 @@
 abstract class Binary extends ArithmeticOperation{
-    abstract void evaluate();
-}
-
-
-class Product extends Binary{
-    @Override
-    void evaluate() {
-        System.out.println("test");
+    public ArithmeticOperation left;
+    public ArithmeticOperation right;
+    public Binary(ArithmeticOperation left, ArithmeticOperation right){
+        this.left = left;
+        this.right = right;
     }
 
 }
 
 
-
-class Sum extends Binary{
+class Product extends Binary{
+    public Product(ArithmeticOperation left, ArithmeticOperation right){
+        super(left, right);
+    }
     @Override
-    void evaluate() {
-        System.out.println("test");
+    int evaluate() {
+        return left.evaluate() * right.evaluate();
+
+}
+
+
+
+class Sum extends Binary {
+    public Sum(ArithmeticOperation left, ArithmeticOperation right) {
+        super(left, right);
+    }
+
+    @Override
+    int evaluate() {
+        return left.evaluate() + right.evaluate();
     }
 }

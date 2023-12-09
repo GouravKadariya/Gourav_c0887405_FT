@@ -1,4 +1,4 @@
 abstract class ArithmeticOperation {
-    abstract void evaluate();
+    abstract int evaluate();
 }
 
